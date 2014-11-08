@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ItemListViewController : UIViewController
+@interface TallyListViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addItemButton;
 
 - (IBAction)addItemButtonTapped:(id)sender;

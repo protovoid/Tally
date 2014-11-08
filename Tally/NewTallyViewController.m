@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 Chad Williams. All rights reserved.
 //
 
-#import "NewItemViewController.h"
-#import "ItemsController.h"
+#import "NewTallyViewController.h"
+#import "TallyController.h"
 #import <iAd/iAd.h>
 
-@interface NewItemViewController () <ADBannerViewDelegate>
+@interface NewTallyViewController () <ADBannerViewDelegate>
 @property (strong, nonatomic) IBOutlet ADBannerView *iadBanner;
 
 @end
 
-@implementation NewItemViewController
+@implementation NewTallyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor orangeColor];
+
+    self.view.backgroundColor = [UIColor colorWithRed:150/255.0 green:237/255.0 blue:137/255.0 alpha:1.0];
     
     CGRect frame = self.iadBanner.frame;
     self.iadBanner.frame = CGRectMake(0, self.view.frame.size.height, frame.size.width, frame.size.height);
@@ -50,7 +50,7 @@
     [self.amountTextField resignFirstResponder];
     [self.memoTextField resignFirstResponder];
     
-    Item *saveItem = [Item new];
+    Tally *saveItem = [Tally new];
     saveItem.name = self.nameTextField.text;
     saveItem.amount = self.amountTextField.text;
     saveItem.memo = self.memoTextField.text;
@@ -68,9 +68,9 @@
     */
 
     if (self.myItem) {
-        [[ItemsController sharedInstance] replaceItem:self.myItem withItem:saveItem];
+        [[TallyController sharedInstance] replaceItem:self.myItem withItem:saveItem];
     } else {
-        [[ItemsController sharedInstance] addItem:self.myItem];
+        [[TallyController sharedInstance] addItem:self.myItem];
     }
     
     

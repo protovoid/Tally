@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 Chad Williams. All rights reserved.
 //
 
-#import "ItemViewDataSource.h"
-#import "ItemsController.h"
+#import "TallyListViewDataSource.h"
+#import "TallyController.h"
 
-@interface ItemViewDataSource () <UITableViewDataSource>
+@interface TallyListViewDataSource () <UITableViewDataSource>
 
 @end
 
-@implementation ItemViewDataSource
+@implementation TallyListViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [ItemsController sharedInstance].items.count;
+    return [TallyController sharedInstance].tallyItems.count;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -25,7 +25,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    Item *tallyItem = [ItemsController sharedInstance].items[indexPath.row];
+    Tally *tallyItem = [TallyController sharedInstance].tallyItems[indexPath.row];
     
     cell.textLabel.text = tallyItem.name;
     

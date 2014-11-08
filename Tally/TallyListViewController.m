@@ -6,33 +6,33 @@
 //  Copyright (c) 2014 Chad Williams. All rights reserved.
 //
 
-#import "ItemListViewController.h"
-#import "ItemViewDatasource.h"
+#import "TallyListViewController.h"
+#import "TallyListViewDatasource.h"
 
-@interface ItemListViewController () <UITableViewDelegate>
+@interface TallyListViewController () <UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *itemListTableView;
-@property (nonatomic, strong) ItemViewDataSource *dataSource;
+@property (nonatomic, strong) UITableView *TallyListTableView;
+@property (nonatomic, strong) TallyListViewDataSource *dataSource;
 
 @end
 
-@implementation ItemListViewController
+@implementation TallyListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.itemListTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    self.dataSource = [ItemViewDataSource new];
-    self.itemListTableView.dataSource = self.dataSource;
+    self.TallyListTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.dataSource = [TallyListViewDataSource new];
+    self.TallyListTableView.dataSource = self.dataSource;
     
-    self.itemListTableView.delegate = self;
+    self.TallyListTableView.delegate = self;
     
-    self.title = @"Title";
-    self.itemListTableView.backgroundColor = [UIColor greenColor];
+    self.title = @"Tally";
+    self.TallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
     
-    [self.view addSubview:self.itemListTableView];
+    [self.view addSubview:self.TallyListTableView];
     
-    // [self.itemListTableView reloadData];
+    // [self.TallyListTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

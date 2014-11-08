@@ -13,11 +13,11 @@
 		6333A5E11A09B8150067CE33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6333A5E01A09B8150067CE33 /* Images.xcassets */; };
 		6333A5E41A09B8150067CE33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6333A5E21A09B8150067CE33 /* LaunchScreen.xib */; };
 		6333A5F01A09B8150067CE33 /* TallyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5EF1A09B8150067CE33 /* TallyTests.m */; };
-		6333A5FB1A09BA740067CE33 /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5FA1A09BA740067CE33 /* NewItemViewController.m */; };
-		6333A5FE1A09C2850067CE33 /* ItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5FD1A09C2850067CE33 /* ItemListViewController.m */; };
-		6333A6071A09D57C0067CE33 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A6061A09D57C0067CE33 /* Item.m */; };
-		6333A60A1A0AF9EA0067CE33 /* ItemsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A6091A0AF9EA0067CE33 /* ItemsController.m */; };
-		6333A6101A0C74990067CE33 /* ItemViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A60F1A0C74990067CE33 /* ItemViewDataSource.m */; };
+		6333A5FB1A09BA740067CE33 /* NewTallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */; };
+		6333A5FE1A09C2850067CE33 /* TallyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5FD1A09C2850067CE33 /* TallyListViewController.m */; };
+		6333A6071A09D57C0067CE33 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A6061A09D57C0067CE33 /* Tally.m */; };
+		6333A60A1A0AF9EA0067CE33 /* TallyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A6091A0AF9EA0067CE33 /* TallyController.m */; };
+		6333A6101A0C74990067CE33 /* TallyListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */; };
 		6333A6131A0E8C970067CE33 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A6121A0E8C970067CE33 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,16 +43,16 @@
 		6333A5E91A09B8150067CE33 /* TallyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TallyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6333A5EE1A09B8150067CE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6333A5EF1A09B8150067CE33 /* TallyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TallyTests.m; sourceTree = "<group>"; };
-		6333A5F91A09BA740067CE33 /* NewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
-		6333A5FA1A09BA740067CE33 /* NewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
-		6333A5FC1A09C2850067CE33 /* ItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemListViewController.h; sourceTree = "<group>"; };
-		6333A5FD1A09C2850067CE33 /* ItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListViewController.m; sourceTree = "<group>"; };
-		6333A6051A09D57C0067CE33 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		6333A6061A09D57C0067CE33 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		6333A6081A0AF9EA0067CE33 /* ItemsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsController.h; sourceTree = "<group>"; };
-		6333A6091A0AF9EA0067CE33 /* ItemsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsController.m; sourceTree = "<group>"; };
-		6333A60E1A0C74990067CE33 /* ItemViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewDataSource.h; sourceTree = "<group>"; };
-		6333A60F1A0C74990067CE33 /* ItemViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewDataSource.m; sourceTree = "<group>"; };
+		6333A5F91A09BA740067CE33 /* NewTallyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTallyViewController.h; sourceTree = "<group>"; };
+		6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTallyViewController.m; sourceTree = "<group>"; };
+		6333A5FC1A09C2850067CE33 /* TallyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyListViewController.h; sourceTree = "<group>"; };
+		6333A5FD1A09C2850067CE33 /* TallyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyListViewController.m; sourceTree = "<group>"; };
+		6333A6051A09D57C0067CE33 /* Tally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tally.h; sourceTree = "<group>"; };
+		6333A6061A09D57C0067CE33 /* Tally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tally.m; sourceTree = "<group>"; };
+		6333A6081A0AF9EA0067CE33 /* TallyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyController.h; sourceTree = "<group>"; };
+		6333A6091A0AF9EA0067CE33 /* TallyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyController.m; sourceTree = "<group>"; };
+		6333A60E1A0C74990067CE33 /* TallyListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyListViewDataSource.h; sourceTree = "<group>"; };
+		6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyListViewDataSource.m; sourceTree = "<group>"; };
 		6333A6121A0E8C970067CE33 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -99,17 +99,17 @@
 			children = (
 				6333A5D71A09B8150067CE33 /* AppDelegate.h */,
 				6333A5D81A09B8150067CE33 /* AppDelegate.m */,
-				6333A5FC1A09C2850067CE33 /* ItemListViewController.h */,
-				6333A5FD1A09C2850067CE33 /* ItemListViewController.m */,
-				6333A5F91A09BA740067CE33 /* NewItemViewController.h */,
-				6333A5FA1A09BA740067CE33 /* NewItemViewController.m */,
+				6333A5FC1A09C2850067CE33 /* TallyListViewController.h */,
+				6333A5FD1A09C2850067CE33 /* TallyListViewController.m */,
+				6333A5F91A09BA740067CE33 /* NewTallyViewController.h */,
+				6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */,
 				6333A5DD1A09B8150067CE33 /* Main.storyboard */,
-				6333A6051A09D57C0067CE33 /* Item.h */,
-				6333A6061A09D57C0067CE33 /* Item.m */,
-				6333A6081A0AF9EA0067CE33 /* ItemsController.h */,
-				6333A6091A0AF9EA0067CE33 /* ItemsController.m */,
-				6333A60E1A0C74990067CE33 /* ItemViewDataSource.h */,
-				6333A60F1A0C74990067CE33 /* ItemViewDataSource.m */,
+				6333A6051A09D57C0067CE33 /* Tally.h */,
+				6333A6061A09D57C0067CE33 /* Tally.m */,
+				6333A6081A0AF9EA0067CE33 /* TallyController.h */,
+				6333A6091A0AF9EA0067CE33 /* TallyController.m */,
+				6333A60E1A0C74990067CE33 /* TallyListViewDataSource.h */,
+				6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */,
 				6333A5E01A09B8150067CE33 /* Images.xcassets */,
 				6333A5E21A09B8150067CE33 /* LaunchScreen.xib */,
 				6333A5D31A09B8150067CE33 /* Supporting Files */,
@@ -243,12 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6333A6071A09D57C0067CE33 /* Item.m in Sources */,
+				6333A6071A09D57C0067CE33 /* Tally.m in Sources */,
 				6333A5D91A09B8150067CE33 /* AppDelegate.m in Sources */,
-				6333A5FB1A09BA740067CE33 /* NewItemViewController.m in Sources */,
-				6333A6101A0C74990067CE33 /* ItemViewDataSource.m in Sources */,
-				6333A60A1A0AF9EA0067CE33 /* ItemsController.m in Sources */,
-				6333A5FE1A09C2850067CE33 /* ItemListViewController.m in Sources */,
+				6333A5FB1A09BA740067CE33 /* NewTallyViewController.m in Sources */,
+				6333A6101A0C74990067CE33 /* TallyListViewDataSource.m in Sources */,
+				6333A60A1A0AF9EA0067CE33 /* TallyController.m in Sources */,
+				6333A5FE1A09C2850067CE33 /* TallyListViewController.m in Sources */,
 				6333A5D61A09B8150067CE33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

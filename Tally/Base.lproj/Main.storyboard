@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-2738" y="204"/>
         </scene>
-        <!--Item List View Controller-->
+        <!--Tally List View Controller-->
         <scene sceneID="jbo-lO-Pqi">
             <objects>
-                <viewController id="6H4-ds-yTe" customClass="ItemListViewController" sceneMemberID="viewController">
+                <viewController id="6H4-ds-yTe" customClass="TallyListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E4O-is-EZ8"/>
                         <viewControllerLayoutGuide type="bottom" id="WHp-FV-txD"/>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="-2026" y="204"/>
         </scene>
-        <!--New Item View Controller-->
+        <!--New Tally View Controller-->
         <scene sceneID="rku-NA-26h">
             <objects>
-                <viewController id="95R-sX-Sbp" customClass="NewItemViewController" sceneMemberID="viewController">
+                <viewController id="95R-sX-Sbp" customClass="NewTallyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R02-sz-ULI"/>
                         <viewControllerLayoutGuide type="bottom" id="QmR-a4-hE4"/>

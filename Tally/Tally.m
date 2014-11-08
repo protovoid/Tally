@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Chad Williams. All rights reserved.
 //
 
-#import "Item.h"
+#import "Tally.h"
 
-@implementation Item
+@implementation Tally
 
 -(NSDictionary *)itemsDictionary {
     NSMutableDictionary *itemsDictionary = [NSMutableDictionary new];

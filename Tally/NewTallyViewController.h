@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Item.h"
+#import "Tally.h"
 
-@interface NewItemViewController : UIViewController
+@interface NewTallyViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *memoTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 
-@property (strong, nonatomic) Item *myItem;
+@property (strong, nonatomic) Tally *myItem;
 
 - (IBAction)saveButtonTapped:(id)sender;
 

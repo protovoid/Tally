@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Item : NSObject
+@interface Tally : NSObject
 
 @property (nonatomic, weak) NSString *name;
 @property (nonatomic, weak) NSString *amount;

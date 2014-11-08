@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface ItemViewDataSource : NSObject <UITableViewDataSource>
+@interface TallyListViewDataSource : NSObject <UITableViewDataSource>
 
 @end
