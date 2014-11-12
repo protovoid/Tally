@@ -34,7 +34,7 @@
     
     [mutableItems addObject:item]; // adds the entry to the mutable array
     
-    self.tallyItems = [mutableItems copy]; //
+    self.tallyItems = mutableItems;
     
     [self synchronize];
     

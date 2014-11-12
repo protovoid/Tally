@@ -10,13 +10,13 @@
 #import "Tally.h"
 
 @interface NewTallyViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *amountTextField;
-@property (weak, nonatomic) IBOutlet UITextField *memoTextField;
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
-@property (weak, nonatomic) IBOutlet UIButton *clearButton;
+@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *amountTextField;
+@property (strong, nonatomic) IBOutlet UITextField *memoTextField;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UIButton *clearButton;
 
-@property (strong, nonatomic) Tally *myItem;
+@property (strong, nonatomic) Tally *myTally;
 
 - (IBAction)saveButtonTapped:(id)sender;
 

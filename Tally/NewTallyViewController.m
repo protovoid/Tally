@@ -67,13 +67,11 @@
     NSLog(@"Data saved.");
     */
 
-    if (self.myItem) {
-        [[TallyController sharedInstance] replaceItem:self.myItem withItem:saveItem];
+    if (self.myTally) {
+        [[TallyController sharedInstance] replaceItem:self.myTally withItem:saveItem];
     } else {
-        [[TallyController sharedInstance] addItem:self.myItem];
+        [[TallyController sharedInstance] addItem:saveItem];
     }
-    
-    
 }
 
 

@@ -20,6 +20,9 @@
 		6333A6101A0C74990067CE33 /* TallyListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */; };
 		6333A6131A0E8C970067CE33 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A6121A0E8C970067CE33 /* iAd.framework */; };
 		6333A6161A0EAD210067CE33 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A6151A0EAD210067CE33 /* CloudKit.framework */; };
+		6333A71E1A1312930067CE33 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A71D1A1312930067CE33 /* Stack.m */; };
+		6333A7201A1312AD0067CE33 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A71F1A1312AD0067CE33 /* CoreData.framework */; };
+		6333A7231A1313240067CE33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6333A7211A1313240067CE33 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,10 @@
 		6333A6121A0E8C970067CE33 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		6333A6141A0EACB70067CE33 /* Tally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tally.entitlements; sourceTree = "<group>"; };
 		6333A6151A0EAD210067CE33 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		6333A71C1A1312930067CE33 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		6333A71D1A1312930067CE33 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		6333A71F1A1312AD0067CE33 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6333A7221A1313240067CE33 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6333A7201A1312AD0067CE33 /* CoreData.framework in Frameworks */,
 				6333A6131A0E8C970067CE33 /* iAd.framework in Frameworks */,
 				6333A6161A0EAD210067CE33 /* CloudKit.framework in Frameworks */,
 			);
@@ -82,6 +90,7 @@
 		6333A5C71A09B8150067CE33 = {
 			isa = PBXGroup;
 			children = (
+				6333A71F1A1312AD0067CE33 /* CoreData.framework */,
 				6333A6151A0EAD210067CE33 /* CloudKit.framework */,
 				6333A6121A0E8C970067CE33 /* iAd.framework */,
 				6333A5D21A09B8150067CE33 /* Tally */,
@@ -102,6 +111,9 @@
 		6333A5D21A09B8150067CE33 /* Tally */ = {
 			isa = PBXGroup;
 			children = (
+				6333A71C1A1312930067CE33 /* Stack.h */,
+				6333A71D1A1312930067CE33 /* Stack.m */,
+				6333A7211A1313240067CE33 /* Model.xcdatamodeld */,
 				6333A6141A0EACB70067CE33 /* Tally.entitlements */,
 				6333A5D71A09B8150067CE33 /* AppDelegate.h */,
 				6333A5D81A09B8150067CE33 /* AppDelegate.m */,
@@ -255,10 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6333A71E1A1312930067CE33 /* Stack.m in Sources */,
 				6333A6071A09D57C0067CE33 /* Tally.m in Sources */,
 				6333A5D91A09B8150067CE33 /* AppDelegate.m in Sources */,
 				6333A5FB1A09BA740067CE33 /* NewTallyViewController.m in Sources */,
 				6333A6101A0C74990067CE33 /* TallyListViewDataSource.m in Sources */,
+				6333A7231A1313240067CE33 /* Model.xcdatamodeld in Sources */,
 				6333A60A1A0AF9EA0067CE33 /* TallyController.m in Sources */,
 				6333A5FE1A09C2850067CE33 /* TallyListViewController.m in Sources */,
 				6333A5D61A09B8150067CE33 /* main.m in Sources */,
@@ -470,6 +484,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6333A7211A1313240067CE33 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6333A7221A1313240067CE33 /* Model.xcdatamodel */,
+			);
+			currentVersion = 6333A7221A1313240067CE33 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6333A5C81A09B8150067CE33 /* Project object */;
 }
