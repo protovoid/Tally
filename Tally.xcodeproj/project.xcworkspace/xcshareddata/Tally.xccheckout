@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0C181921-CFAB-42BD-981B-CF99E36A173E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tally</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>23198F57AEC5631A2145F47785588601FA57028C</key>
+		<string>https://github.com/protovoid/Tally.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tally.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>23198F57AEC5631A2145F47785588601FA57028C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/protovoid/Tally.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>23198F57AEC5631A2145F47785588601FA57028C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>23198F57AEC5631A2145F47785588601FA57028C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Tally</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -19,6 +19,7 @@
 		6333A60A1A0AF9EA0067CE33 /* TallyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A6091A0AF9EA0067CE33 /* TallyController.m */; };
 		6333A6101A0C74990067CE33 /* TallyListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */; };
 		6333A6131A0E8C970067CE33 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A6121A0E8C970067CE33 /* iAd.framework */; };
+		6333A6161A0EAD210067CE33 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A6151A0EAD210067CE33 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		6333A60E1A0C74990067CE33 /* TallyListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyListViewDataSource.h; sourceTree = "<group>"; };
 		6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyListViewDataSource.m; sourceTree = "<group>"; };
 		6333A6121A0E8C970067CE33 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		6333A6141A0EACB70067CE33 /* Tally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tally.entitlements; sourceTree = "<group>"; };
+		6333A6151A0EAD210067CE33 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6333A6131A0E8C970067CE33 /* iAd.framework in Frameworks */,
+				6333A6161A0EAD210067CE33 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,7 @@
 		6333A5C71A09B8150067CE33 = {
 			isa = PBXGroup;
 			children = (
+				6333A6151A0EAD210067CE33 /* CloudKit.framework */,
 				6333A6121A0E8C970067CE33 /* iAd.framework */,
 				6333A5D21A09B8150067CE33 /* Tally */,
 				6333A5EC1A09B8150067CE33 /* TallyTests */,
@@ -97,6 +102,7 @@
 		6333A5D21A09B8150067CE33 /* Tally */ = {
 			isa = PBXGroup;
 			children = (
+				6333A6141A0EACB70067CE33 /* Tally.entitlements */,
 				6333A5D71A09B8150067CE33 /* AppDelegate.h */,
 				6333A5D81A09B8150067CE33 /* AppDelegate.m */,
 				6333A5FC1A09C2850067CE33 /* TallyListViewController.h */,
@@ -192,6 +198,12 @@
 				TargetAttributes = {
 					6333A5CF1A09B8150067CE33 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = USX5JPN9EV;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					6333A5E81A09B8150067CE33 = {
 						CreatedOnToolsVersion = 6.1;
@@ -371,9 +383,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tally/Tally.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tally/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -381,9 +397,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tally/Tally.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Tally/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
