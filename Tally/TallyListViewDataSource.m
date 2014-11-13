@@ -15,6 +15,10 @@
 
 @implementation TallyListViewDataSource
 
+- (void)registerTableView:(UITableView *)tableView{
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [TallyController sharedInstance].tallyItems.count;
 }

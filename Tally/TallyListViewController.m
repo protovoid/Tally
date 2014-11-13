@@ -23,6 +23,7 @@
     // Do any additional setup after loading the view.
     self.TallyListTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     self.dataSource = [TallyListViewDataSource new];
+    [self.dataSource registerTableView:self.TallyListTableView];
     self.TallyListTableView.dataSource = self.dataSource;
     
     self.TallyListTableView.delegate = self;

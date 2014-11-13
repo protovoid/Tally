@@ -1,39 +1,18 @@
 //
-//  Item.m
+//  Tally.m
 //  Tally
 //
-//  Created by Chad on 11/4/14.
+//  Created by Chad on 11/11/14.
 //  Copyright (c) 2014 Chad Williams. All rights reserved.
 //
 
 #import "Tally.h"
 
+
 @implementation Tally
 
--(NSDictionary *)itemsDictionary {
-    NSMutableDictionary *itemsDictionary = [NSMutableDictionary new];
-    if (self.name != nil) {
-        itemsDictionary[@"name"] = self.name;
-    }
-    
-    if (self.amount != nil) {
-        itemsDictionary[@"amount"] = self.amount;
-    }
-    
-    if (self.memo != nil) {
-        itemsDictionary[@"memo"] = self.memo;
-    }
-    
-    return itemsDictionary;
-}
-
--(id)initWithDictionary:(NSDictionary *)dictionary {
-    if (self != nil) {
-        self.name = [dictionary objectForKey:@"name"];
-        self.amount = [dictionary objectForKey:@"amount"];
-        self.memo = [dictionary objectForKey:@"memo"];
-    }
-    return self;
-}
+@dynamic name;
+@dynamic amount;
+@dynamic memo;
 
 @end

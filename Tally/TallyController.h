@@ -11,13 +11,12 @@
 
 @interface TallyController : NSObject
 
-@property (nonatomic, strong) NSArray *tallyItems;
-
 + (TallyController *)sharedInstance;
-- (void)addItem:(Tally *)item;
+- (void)addTallyWithName:(NSString*)name amount:(NSNumber *)amount memo:(NSString *)memo;
 - (void)removeItem:(Tally *)item;
 - (void)replaceItem:(Tally *)oldItem withItem:(Tally *)newItem;
-- (void)loadFromDefaults;
 - (void)synchronize;
+
+- (NSArray *)tallyItems;
 
 @end

@@ -15,7 +15,6 @@
 		6333A5F01A09B8150067CE33 /* TallyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5EF1A09B8150067CE33 /* TallyTests.m */; };
 		6333A5FB1A09BA740067CE33 /* NewTallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */; };
 		6333A5FE1A09C2850067CE33 /* TallyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A5FD1A09C2850067CE33 /* TallyListViewController.m */; };
-		6333A6071A09D57C0067CE33 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A6061A09D57C0067CE33 /* Tally.m */; };
 		6333A60A1A0AF9EA0067CE33 /* TallyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A6091A0AF9EA0067CE33 /* TallyController.m */; };
 		6333A6101A0C74990067CE33 /* TallyListViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */; };
 		6333A6131A0E8C970067CE33 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A6121A0E8C970067CE33 /* iAd.framework */; };
@@ -23,6 +22,7 @@
 		6333A71E1A1312930067CE33 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A71D1A1312930067CE33 /* Stack.m */; };
 		6333A7201A1312AD0067CE33 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6333A71F1A1312AD0067CE33 /* CoreData.framework */; };
 		6333A7231A1313240067CE33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6333A7211A1313240067CE33 /* Model.xcdatamodeld */; };
+		6333A7261A1314F20067CE33 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A7251A1314F20067CE33 /* Tally.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,6 @@
 		6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTallyViewController.m; sourceTree = "<group>"; };
 		6333A5FC1A09C2850067CE33 /* TallyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyListViewController.h; sourceTree = "<group>"; };
 		6333A5FD1A09C2850067CE33 /* TallyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyListViewController.m; sourceTree = "<group>"; };
-		6333A6051A09D57C0067CE33 /* Tally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tally.h; sourceTree = "<group>"; };
-		6333A6061A09D57C0067CE33 /* Tally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tally.m; sourceTree = "<group>"; };
 		6333A6081A0AF9EA0067CE33 /* TallyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyController.h; sourceTree = "<group>"; };
 		6333A6091A0AF9EA0067CE33 /* TallyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyController.m; sourceTree = "<group>"; };
 		6333A60E1A0C74990067CE33 /* TallyListViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyListViewDataSource.h; sourceTree = "<group>"; };
@@ -64,6 +62,8 @@
 		6333A71D1A1312930067CE33 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		6333A71F1A1312AD0067CE33 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6333A7221A1313240067CE33 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6333A7241A1314F20067CE33 /* Tally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tally.h; sourceTree = "<group>"; };
+		6333A7251A1314F20067CE33 /* Tally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tally.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,12 +122,12 @@
 				6333A5F91A09BA740067CE33 /* NewTallyViewController.h */,
 				6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */,
 				6333A5DD1A09B8150067CE33 /* Main.storyboard */,
-				6333A6051A09D57C0067CE33 /* Tally.h */,
-				6333A6061A09D57C0067CE33 /* Tally.m */,
 				6333A6081A0AF9EA0067CE33 /* TallyController.h */,
 				6333A6091A0AF9EA0067CE33 /* TallyController.m */,
 				6333A60E1A0C74990067CE33 /* TallyListViewDataSource.h */,
 				6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */,
+				6333A7241A1314F20067CE33 /* Tally.h */,
+				6333A7251A1314F20067CE33 /* Tally.m */,
 				6333A5E01A09B8150067CE33 /* Images.xcassets */,
 				6333A5E21A09B8150067CE33 /* LaunchScreen.xib */,
 				6333A5D31A09B8150067CE33 /* Supporting Files */,
@@ -267,8 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6333A7261A1314F20067CE33 /* Tally.m in Sources */,
 				6333A71E1A1312930067CE33 /* Stack.m in Sources */,
-				6333A6071A09D57C0067CE33 /* Tally.m in Sources */,
 				6333A5D91A09B8150067CE33 /* AppDelegate.m in Sources */,
 				6333A5FB1A09BA740067CE33 /* NewTallyViewController.m in Sources */,
 				6333A6101A0C74990067CE33 /* TallyListViewDataSource.m in Sources */,

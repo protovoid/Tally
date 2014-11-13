@@ -1,20 +1,19 @@
 //
-//  Item.h
+//  Tally.h
 //  Tally
 //
-//  Created by Chad on 11/4/14.
+//  Created by Chad on 11/11/14.
 //  Copyright (c) 2014 Chad Williams. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Tally : NSObject
 
-@property (nonatomic, weak) NSString *name;
-@property (nonatomic, weak) NSString *amount;
-@property (nonatomic, weak) NSString *memo;
+@interface Tally : NSManagedObject
 
--(NSDictionary *)itemsDictionary;
--(id)initWithDictionary:(NSDictionary *)dictionary;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * amount;
+@property (nonatomic, retain) NSString * memo;
 
 @end

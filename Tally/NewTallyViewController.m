@@ -8,6 +8,8 @@
 
 #import "NewTallyViewController.h"
 #import "TallyController.h"
+#import "Tally.h"
+#import "Stack.h"
 #import <iAd/iAd.h>
 
 @interface NewTallyViewController () <ADBannerViewDelegate>
@@ -50,10 +52,7 @@
     [self.amountTextField resignFirstResponder];
     [self.memoTextField resignFirstResponder];
     
-    Tally *saveItem = [Tally new];
-    saveItem.name = self.nameTextField.text;
-    saveItem.amount = self.amountTextField.text;
-    saveItem.memo = self.memoTextField.text;
+    
     
     // NSDate *now = [NSDate date];
     // saveItem.timestamp = now;
@@ -67,11 +66,11 @@
     NSLog(@"Data saved.");
     */
 
-    if (self.myTally) {
-        [[TallyController sharedInstance] replaceItem:self.myTally withItem:saveItem];
-    } else {
-        [[TallyController sharedInstance] addItem:saveItem];
-    }
+//    if (self.myTally) {
+//        [[TallyController sharedInstance] replaceItem:self.myTally withItem:saveItem];
+//    } else {
+        [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];
+//    }
 }
 
 

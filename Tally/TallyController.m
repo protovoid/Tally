@@ -7,6 +7,7 @@
 //
 
 #import "TallyController.h"
+#import "Stack.h"
 
 @interface TallyController ()
 // @property (nonatomic, strong) NSArray *items;
@@ -19,22 +20,19 @@
     static TallyController *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[TallyController alloc] init];
-        sharedInstance.tallyItems = @[]; // create empty array
-        
-        [sharedInstance loadFromDefaults];
+        sharedInstance = [[TallyController alloc] init];        
     });
     return sharedInstance;
 }
 
 
-- (void)addItem:(Tally *)item; {
+- (void)addTallyWithName:(NSString*)name amount:(NSNumber *)amount memo:(NSString *)memo {
     
-    NSMutableArray *mutableItems = [[NSMutableArray alloc] initWithArray:self.tallyItems]; // ref all objects into a new mutable array
+    Tally *saveItem = [NSEntityDescription insertNewObjectForEntityForName:@"Tally" inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
-    [mutableItems addObject:item]; // adds the entry to the mutable array
-    
-    self.tallyItems = mutableItems;
+    saveItem.name = name;
+    saveItem.amount = amount;
+    saveItem.memo = memo;
     
     [self synchronize];
     
@@ -47,7 +45,6 @@
     
     [mutableItems removeObject:item]; // removes the entry to the mutable array
     
-    self.tallyItems = [mutableItems copy];
     
     [self synchronize];
     
@@ -64,31 +61,21 @@
         NSUInteger index = [mutableItems indexOfObject:oldItem];
         [mutableItems replaceObjectAtIndex:index withObject:newItem];
         
-        self.tallyItems = [mutableItems copy];
         
         [self synchronize];
         
     }
-    
 }
-
-
-- (void)loadFromDefaults {
-    NSArray *myItems = [[NSUserDefaults standardUserDefaults] objectForKey:@"myItems"];
-    
-    if (myItems) {
-        self.tallyItems = myItems;
-    }
-    
-    
-}
-
 
 - (void)synchronize {
-    [[NSUserDefaults standardUserDefaults] setObject:self.tallyItems forKey:@"myItems"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    
+    [[Stack sharedInstance].managedObjectContext save:nil];
 }
+
+- (NSArray *)tallyItems {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Tally"];
+    
+    return [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
+}
+
 
 @end
