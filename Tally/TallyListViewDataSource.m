@@ -17,7 +17,12 @@
 @implementation TallyListViewDataSource
 
 - (void)registerTableView:(UITableView *)tableView{
-    [tableView registerClass:[TallyTableViewCell class] forCellReuseIdentifier:@"cell"];
+    [tableView registerNib:[UINib nibWithNibName:@"TallyTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -29,14 +34,31 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    TallyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    TallyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
     // cell = [[TallyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 
-    //Tally *tallyItem = [TallyController sharedInstance].tallyItems[indexPath.row];
+    Tally *tallyForCell = [TallyController sharedInstance].tallyItems[indexPath.row];
+    
+    NSString *amountString = [tallyForCell.amount stringValue];
+    
+    cell.nameLabel.text = tallyForCell.name;
+    cell.amountLabel.text = amountString;
+    cell.memoLabel.text = tallyForCell.memo;
+    
+    
     
 
 
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
 

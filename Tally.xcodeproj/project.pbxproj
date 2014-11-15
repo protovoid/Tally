@@ -24,6 +24,7 @@
 		6333A7231A1313240067CE33 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6333A7211A1313240067CE33 /* Model.xcdatamodeld */; };
 		6333A7261A1314F20067CE33 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = 6333A7251A1314F20067CE33 /* Tally.m */; };
 		6377ACA81A14498200A842F3 /* TallyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377ACA71A14498200A842F3 /* TallyTableViewCell.m */; };
+		6377ACF71A17D8CC00A842F3 /* TallyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377ACF61A17D8CC00A842F3 /* TallyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		6333A7251A1314F20067CE33 /* Tally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tally.m; sourceTree = "<group>"; };
 		6377ACA61A14498200A842F3 /* TallyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyTableViewCell.h; sourceTree = "<group>"; };
 		6377ACA71A14498200A842F3 /* TallyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyTableViewCell.m; sourceTree = "<group>"; };
+		6377ACF61A17D8CC00A842F3 /* TallyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TallyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				6333A60F1A0C74990067CE33 /* TallyListViewDataSource.m */,
 				6377ACA61A14498200A842F3 /* TallyTableViewCell.h */,
 				6377ACA71A14498200A842F3 /* TallyTableViewCell.m */,
+				6377ACF61A17D8CC00A842F3 /* TallyTableViewCell.xib */,
 			);
 			name = TallyListView;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6377ACF71A17D8CC00A842F3 /* TallyTableViewCell.xib in Resources */,
 				6333A5DF1A09B8150067CE33 /* Main.storyboard in Resources */,
 				6333A5E41A09B8150067CE33 /* LaunchScreen.xib in Resources */,
 				6333A5E11A09B8150067CE33 /* Images.xcassets in Resources */,

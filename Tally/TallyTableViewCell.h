@@ -10,8 +10,11 @@
 
 @interface TallyTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) UILabel *nameLabel;
-@property (strong, nonatomic) UILabel *amountLabel;
-@property (strong, nonatomic) UILabel *memoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *memoLabel;
+
+
+
 
 @end
