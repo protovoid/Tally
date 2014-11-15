@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.TallyListTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.TallyListTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.dataSource = [TallyListViewDataSource new];
     [self.dataSource registerTableView:self.TallyListTableView];
     self.TallyListTableView.dataSource = self.dataSource;
@@ -32,6 +32,7 @@
     self.TallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
     
     [self.view addSubview:self.TallyListTableView];
+
     
     // [self.TallyListTableView reloadData];
 }

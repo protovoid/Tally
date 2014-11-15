@@ -8,6 +8,7 @@
 
 #import "TallyListViewDataSource.h"
 #import "TallyController.h"
+#import "TallyTableViewCell.h"
 
 @interface TallyListViewDataSource () <UITableViewDataSource>
 
@@ -16,7 +17,7 @@
 @implementation TallyListViewDataSource
 
 - (void)registerTableView:(UITableView *)tableView{
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [tableView registerClass:[TallyTableViewCell class] forCellReuseIdentifier:@"cell"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -28,28 +29,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    Tally *tallyItem = [TallyController sharedInstance].tallyItems[indexPath.row];
+    TallyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    // cell = [[TallyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+
+    //Tally *tallyItem = [TallyController sharedInstance].tallyItems[indexPath.row];
     
-    cell.textLabel.text = tallyItem.name;
-    
+
+
     return cell;
 }
 
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
- DXEntry *entry = [ESEntryController sharedInstance].entries[indexPath.row];
- 
- NSDictionary *dict = [ESEntryController sharedInstance].entries[indexPath.row];
- NSString *title = dict[TitleKey];
- 
- cell.textLabel.text = entry.title;
- 
- return cell;
- 
- }
- */
 
 @end

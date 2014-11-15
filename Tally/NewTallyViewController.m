@@ -52,25 +52,11 @@
     [self.amountTextField resignFirstResponder];
     [self.memoTextField resignFirstResponder];
     
-    
-    
     // NSDate *now = [NSDate date];
     // saveItem.timestamp = now;
     
-    /*
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:saveItem.name forKey:@"name"];
-    [defaults setObject:saveItem.amount forKey:@"amount"];
-    [defaults setObject:saveItem.memo forKey:@"memo"];
-    [defaults synchronize];
-    NSLog(@"Data saved.");
-    */
+    [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];
 
-//    if (self.myTally) {
-//        [[TallyController sharedInstance] replaceItem:self.myTally withItem:saveItem];
-//    } else {
-        [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];
-//    }
 }
 
 
