@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *memoLabel;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeLeft;
 
 
 

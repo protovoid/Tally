@@ -41,14 +41,9 @@
 
 - (void)removeItem:(Tally *)item; {
     
-    NSMutableArray *mutableItems = [self.tallyItems mutableCopy]; // ref all objects into a new mutable array
-    
-    [mutableItems removeObject:item]; // removes the entry to the mutable array
-    
+    [[Stack sharedInstance].managedObjectContext deleteObject:item]; // deletes from managedObContext in Core Data
     
     [self synchronize];
-    
-    
 }
 
 

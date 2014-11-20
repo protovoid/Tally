@@ -27,12 +27,17 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
 }
 
 - (void)setup {
     
-    self.contentView.backgroundColor = [UIColor redColor];
+//    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeftToDelete:)];
+//    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+//    [self addGestureRecognizer:swipeLeft];
+    
+    
+    
+    // self.contentView.backgroundColor = [UIColor redColor];
     
 //     create labels
 //    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 90, 20)];
@@ -71,11 +76,13 @@
 //    [self addSubview:amountLabel];
 //    [self addSubview:memoLabel];
     
-    
-    
-    
-    
-    
 }
 
+
+
+//- (IBAction)swipeLeftToDelete:(id)sender {
+//    if (swipeLeft.state == UIGestureRecognizerStateEnded) {
+//        //handle the gesture
+//    }
+//}
 @end

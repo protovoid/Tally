@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TallyTableViewCell"/>
@@ -12,26 +13,62 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nAB-sO-e38" id="AD1-ab-ANX">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifH-Vq-K6l">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifH-Vq-K6l">
                         <rect key="frame" x="8" y="8" width="46" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="BIH-Em-Ivf"/>
+                            <constraint firstAttribute="width" constant="46" id="hpV-6G-gRc"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-f8-yQc">
-                        <rect key="frame" x="367" y="28" width="60" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-f8-yQc">
+                        <rect key="frame" x="365.5" y="28" width="61.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brn-S7-lkK">
-                        <rect key="frame" x="8" y="37" width="49" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brn-S7-lkK">
+                        <rect key="frame" x="8" y="49" width="40.5" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Xhg-1O-XPj"/>
+                            <constraint firstAttribute="width" constant="49" id="Zdh-WZ-AJP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xhg-1O-XPj"/>
+                                <exclude reference="Zdh-WZ-AJP"/>
+                            </mask>
+                        </variation>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="wgU-f8-yQc" firstAttribute="top" secondItem="AD1-ab-ANX" secondAttribute="topMargin" constant="20" id="3yu-J9-n3P"/>
+                    <constraint firstItem="wgU-f8-yQc" firstAttribute="centerY" secondItem="AD1-ab-ANX" secondAttribute="centerY" id="CTV-Sy-UfB"/>
+                    <constraint firstItem="wgU-f8-yQc" firstAttribute="trailing" secondItem="AD1-ab-ANX" secondAttribute="trailingMargin" id="F9U-aS-abs"/>
+                    <constraint firstItem="brn-S7-lkK" firstAttribute="leading" secondItem="AD1-ab-ANX" secondAttribute="leadingMargin" id="a8a-Xt-ft1"/>
+                    <constraint firstItem="brn-S7-lkK" firstAttribute="leading" secondItem="ifH-Vq-K6l" secondAttribute="leading" id="anp-Dd-ad8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="brn-S7-lkK" secondAttribute="bottom" id="gwq-gZ-b89"/>
+                    <constraint firstItem="ifH-Vq-K6l" firstAttribute="leading" secondItem="AD1-ab-ANX" secondAttribute="leadingMargin" id="iey-gc-bBN"/>
+                    <constraint firstItem="brn-S7-lkK" firstAttribute="top" secondItem="ifH-Vq-K6l" secondAttribute="bottom" constant="20" id="mRs-Ge-SSp"/>
+                    <constraint firstItem="ifH-Vq-K6l" firstAttribute="leading" secondItem="brn-S7-lkK" secondAttribute="leading" id="nU9-C9-2n5"/>
+                    <constraint firstItem="ifH-Vq-K6l" firstAttribute="top" secondItem="AD1-ab-ANX" secondAttribute="topMargin" id="qtn-RM-2fh"/>
+                    <constraint firstItem="brn-S7-lkK" firstAttribute="top" secondItem="ifH-Vq-K6l" secondAttribute="bottom" constant="20" id="wxD-vJ-qfY"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="a8a-Xt-ft1"/>
+                        <exclude reference="anp-Dd-ad8"/>
+                        <exclude reference="gwq-gZ-b89"/>
+                        <exclude reference="mRs-Ge-SSp"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <gestureRecognizers/>
             <connections>
                 <outlet property="amountLabel" destination="wgU-f8-yQc" id="zfl-jN-sHW"/>
                 <outlet property="memoLabel" destination="brn-S7-lkK" id="Q3V-tz-cvu"/>

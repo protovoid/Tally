@@ -11,31 +11,50 @@
 
 @interface TallyListViewController () <UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *TallyListTableView;
+@property (nonatomic, strong) UITableView *tallyListTableView;
 @property (nonatomic, strong) TallyListViewDataSource *dataSource;
 
 @end
 
 @implementation TallyListViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tallyListTableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.TallyListTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tallyListTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.dataSource = [TallyListViewDataSource new];
-    [self.dataSource registerTableView:self.TallyListTableView];
-    self.TallyListTableView.dataSource = self.dataSource;
+    [self.dataSource registerTableView:self.tallyListTableView];
+    self.tallyListTableView.dataSource = self.dataSource;
     
-    self.TallyListTableView.delegate = self;
+    self.tallyListTableView.allowsMultipleSelection = NO;
+    
+    self.tallyListTableView.delegate = self;
     
     self.title = @"Tally";
-    self.TallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
+    self.tallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
     
-    [self.view addSubview:self.TallyListTableView];
+    [self.view addSubview:self.tallyListTableView];
 
     
-    // [self.TallyListTableView reloadData];
 }
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 78;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,4 +73,5 @@
 
 - (IBAction)addItemButtonTapped:(id)sender {
 }
+
 @end

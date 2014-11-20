@@ -27,6 +27,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [TallyController sharedInstance].tallyItems.count;
+    
+    // fetched results controller here, for delete animation
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -46,20 +48,28 @@
     cell.amountLabel.text = amountString;
     cell.memoLabel.text = tallyForCell.memo;
     
-    
-    
-
-
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
     return YES;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Get the object you want to remove from your
+        // collection and delete it here.
+        
+        Tally *tallyToDelete = [TallyController sharedInstance].tallyItems[indexPath.row];
+        [[TallyController sharedInstance] removeItem:tallyToDelete];
+        
+        // [tableView reloadData];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        NSLog(@"Awesome!");
+    }
 }
-
 
 @end
