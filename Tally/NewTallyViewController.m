@@ -41,8 +41,6 @@
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
-    
     [self updateSaveButton];
     return YES;
 }
@@ -56,8 +54,6 @@
         float amountNumber = self.amountTextField.text.floatValue;
         self.amountTextField.text = [NSString stringWithFormat:@"%.2f", amountNumber];
     }
-    
-
 }
 
 
@@ -70,8 +66,6 @@
 }
 
 -(void)updateSaveButton {
-    
-    
     self.saveButton.enabled = [self isTextValidated];
 }
 
@@ -87,11 +81,8 @@
     // saveItem.timestamp = now;
     
     
-    if ([self isTextValidated]) {
-        [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];
-    }
+    [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];
 
-    
     [self.navigationController popViewControllerAnimated:YES];
 
 }

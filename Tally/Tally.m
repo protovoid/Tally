@@ -9,10 +9,14 @@
 #import "Tally.h"
 
 
+
 @implementation Tally
+
 
 @dynamic name;
 @dynamic amount;
 @dynamic memo;
+
+
 
 @end

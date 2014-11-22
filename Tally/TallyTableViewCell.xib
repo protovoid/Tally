@@ -14,10 +14,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifH-Vq-K6l">
-                        <rect key="frame" x="8" y="8" width="46" height="21"/>
+                        <rect key="frame" x="8" y="8" width="100" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="BIH-Em-Ivf"/>
-                            <constraint firstAttribute="width" constant="46" id="hpV-6G-gRc"/>
+                            <constraint firstAttribute="width" constant="100" id="hpV-6G-gRc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -26,16 +26,15 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-f8-yQc">
                         <rect key="frame" x="365.5" y="28" width="61.5" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brn-S7-lkK">
-                        <rect key="frame" x="8" y="49" width="40.5" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brn-S7-lkK">
+                        <rect key="frame" x="8" y="49" width="200" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Xhg-1O-XPj"/>
                             <constraint firstAttribute="width" constant="49" id="Zdh-WZ-AJP"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
@@ -68,6 +67,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <connections>
                 <outlet property="amountLabel" destination="wgU-f8-yQc" id="zfl-jN-sHW"/>

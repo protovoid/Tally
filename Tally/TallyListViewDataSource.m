@@ -27,25 +27,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [TallyController sharedInstance].tallyItems.count;
-    
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TallyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-
-    // cell = [[TallyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 
     Tally *tallyForCell = [TallyController sharedInstance].tallyItems[indexPath.row];
     
     NSString *amountString = [tallyForCell.amount stringValue];
     
     cell.nameLabel.text = tallyForCell.name;
-    cell.amountLabel.text = amountString;
+    cell.amountLabel.text = [NSString stringWithFormat:@"$%@", amountString];
     cell.memoLabel.text = tallyForCell.memo;
+    
+    cell.backgroundColor = [self colorForIndex:indexPath.row];
     
     return cell;
 }
@@ -67,5 +64,16 @@
         NSLog(@"Awesome!");
     }
 }
+
+
+-(UIColor*)colorForIndex:(NSInteger) index {
+    NSUInteger tallyCount = [TallyController sharedInstance].tallyItems.count - 1;
+    float val = ((float)index / (float)tallyCount) * 0.8;
+    return [UIColor colorWithRed:val green:1.0 blue:0.0 alpha:1.0];
+}
+
+//-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    cell.backgroundColor = [self colorForIndex:indexPath.row];
+//}
 
 @end

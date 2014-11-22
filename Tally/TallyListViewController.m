@@ -31,13 +31,13 @@
     self.dataSource = [TallyListViewDataSource new];
     [self.dataSource registerTableView:self.tallyListTableView];
     self.tallyListTableView.dataSource = self.dataSource;
-    
-    self.tallyListTableView.allowsMultipleSelection = NO;
-    
     self.tallyListTableView.delegate = self;
+    self.tallyListTableView.allowsMultipleSelection = NO;
+    self.tallyListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tallyListTableView.backgroundColor = [UIColor blackColor];
     
     self.title = @"Tally";
-    self.tallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
+    //self.tallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
     
     [self.view addSubview:self.tallyListTableView];
 
@@ -46,13 +46,21 @@
 
 
 
+
+#pragma mark - UITableViewDataDelegate protocol methods
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 78.0f;
+}
+
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 78;
-}
+
 
 
 
@@ -73,5 +81,9 @@
 
 - (IBAction)addItemButtonTapped:(id)sender {
 }
+
+
+
+
 
 @end
