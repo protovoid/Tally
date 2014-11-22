@@ -12,7 +12,7 @@
 #import "Stack.h"
 #import <iAd/iAd.h>
 
-@interface NewTallyViewController () <ADBannerViewDelegate>
+@interface NewTallyViewController () <ADBannerViewDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet ADBannerView *iadBanner;
 
 @end
@@ -21,14 +21,60 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.nameTextField.delegate = self;
+    self.amountTextField.delegate = self;
+    self.memoTextField.delegate = self;
 
     self.view.backgroundColor = [UIColor colorWithRed:150/255.0 green:237/255.0 blue:137/255.0 alpha:1.0];
     
+    // grey-out save button until validated
+    self.saveButton.enabled = NO;
+    
+    
+    
+    // set up iAd
     CGRect frame = self.iadBanner.frame;
     self.iadBanner.frame = CGRectMake(0, self.view.frame.size.height, frame.size.width, frame.size.height);
     self.iadBanner.delegate = self;
     
 }
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    
+    [self updateSaveButton];
+    return YES;
+}
+
+
+
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    // add decimal point
+    if (textField == self.amountTextField) {
+        float amountNumber = self.amountTextField.text.floatValue;
+        self.amountTextField.text = [NSString stringWithFormat:@"%.2f", amountNumber];
+    }
+    
+
+}
+
+
+-(BOOL)isTextValidated {
+    if (self.nameTextField.text.length > 0 && self.amountTextField.text.length > 0 && self.memoTextField.text.length > 0) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(void)updateSaveButton {
+    
+    
+    self.saveButton.enabled = [self isTextValidated];
+}
+
 
 - (IBAction)saveButtonTapped:(id)sender {
     
@@ -39,10 +85,12 @@
     
     // NSDate *now = [NSDate date];
     // saveItem.timestamp = now;
-
-    if (self.nameTextField.text.length > 0 && self.amountTextField.text.length > 0 && self.memoTextField.text.length > 0) {
-        [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];        
+    
+    
+    if ([self isTextValidated]) {
+        [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];
     }
+
     
     [self.navigationController popViewControllerAnimated:YES];
 
@@ -63,13 +111,7 @@
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    /*
-     [UIView animateWithDuration:0.5 animations:^{
-     CGRect frame = self.iadBanner.frame;
-     self.iadBanner.frame = CGRectMake(0, self.view.frame.size.height - frame.size.height, frame.size.width, frame.size.height);
-     
-     }];
-     */
+
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
