@@ -14,6 +14,7 @@
 
 @interface NewTallyViewController () <ADBannerViewDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet ADBannerView *iadBanner;
+@property(readwrite, retain) UIView *inputAccessoryView;
 
 @end
 
@@ -25,6 +26,32 @@
     self.nameTextField.delegate = self;
     self.amountTextField.delegate = self;
     self.memoTextField.delegate = self;
+    
+//    self.inputAccessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+//    self.inputAccessoryView.backgroundColor = [UIColor redColor];
+    UIToolbar *inputToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 0, 50)];
+    self.nameTextField.inputAccessoryView = inputToolbar;
+    self.amountTextField.inputAccessoryView = inputToolbar;
+    self.memoTextField.inputAccessoryView = inputToolbar;
+    
+    // UIBarButtonItem *prevBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(prevTextField)];
+    UIImage *less_than = [UIImage imageNamed:@"less_than-50.png"];
+    UIImage *more_than = [UIImage imageNamed:@"more_than-50.png"];
+    UIBarButtonItem *prevBarButton = [[UIBarButtonItem alloc] initWithImage:less_than style:UIBarButtonItemStylePlain target:self action:@selector(prevTextField)];
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
+    UIBarButtonItem *nextBarButton = [[UIBarButtonItem alloc] initWithImage:more_than style:UIBarButtonItemStylePlain target:self action:@selector(nextTextField)];
+    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(hideKeyboard)];
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    fixedSpace.width = 20;
+    inputToolbar.items = @[prevBarButton, fixedSpace, nextBarButton, flexSpace, doneBarButton];
+    
+    
+    
+    
+    
+
+    
+    
 
     self.view.backgroundColor = [UIColor colorWithRed:150/255.0 green:237/255.0 blue:137/255.0 alpha:1.0];
     
@@ -33,11 +60,35 @@
     
     
     
+    
+    
     // set up iAd
     CGRect frame = self.iadBanner.frame;
     self.iadBanner.frame = CGRectMake(0, self.view.frame.size.height, frame.size.width, frame.size.height);
     self.iadBanner.delegate = self;
     
+}
+
+-(void)prevTextField {
+    if ([self.amountTextField isEditing]) {
+        [self.memoTextField becomeFirstResponder];
+    } else if ([self.memoTextField isEditing]) {
+        [self.amountTextField becomeFirstResponder];
+    }
+}
+                             
+-(void)nextTextField {
+    if ([self.nameTextField isEditing]) {
+        [self.amountTextField becomeFirstResponder];
+    } else if ([self.amountTextField isEditing]) {
+        [self.memoTextField becomeFirstResponder];
+    }
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self nextTextField];
+    return YES;
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -73,18 +124,24 @@
 - (IBAction)saveButtonTapped:(id)sender {
     
     // hide keyboard
-    [self.nameTextField resignFirstResponder];
-    [self.amountTextField resignFirstResponder];
-    [self.memoTextField resignFirstResponder];
+    [self hideKeyboard];
     
     // NSDate *now = [NSDate date];
     // saveItem.timestamp = now;
     
     
     [[TallyController sharedInstance] addTallyWithName:self.nameTextField.text amount:[NSNumber numberWithFloat:[self.amountTextField.text floatValue]] memo:self.memoTextField.text];
-
+    
+    // pop back to TallyListViewController
     [self.navigationController popViewControllerAnimated:YES];
+    
 
+}
+
+-(void)hideKeyboard {
+    [self.nameTextField resignFirstResponder];
+    [self.amountTextField resignFirstResponder];
+    [self.memoTextField resignFirstResponder];
 }
 
 

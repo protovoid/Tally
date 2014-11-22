@@ -36,10 +36,13 @@
 
     Tally *tallyForCell = [TallyController sharedInstance].tallyItems[indexPath.row];
     
-    NSString *amountString = [tallyForCell.amount stringValue];
+    // NSString *amountString = [tallyForCell.amount stringValue];
+    // cell.amountLabel.text = [NSString stringWithFormat:@"$ %@", amountString];
     
+    NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+    [currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    cell.amountLabel.text = [currencyFormatter stringFromNumber:tallyForCell.amount];
     cell.nameLabel.text = tallyForCell.name;
-    cell.amountLabel.text = [NSString stringWithFormat:@"$%@", amountString];
     cell.memoLabel.text = tallyForCell.memo;
     
     cell.backgroundColor = [self colorForIndex:indexPath.row];
@@ -60,8 +63,6 @@
         
         // [tableView reloadData];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
-        NSLog(@"Awesome!");
     }
 }
 
@@ -69,11 +70,13 @@
 -(UIColor*)colorForIndex:(NSInteger) index {
     NSUInteger tallyCount = [TallyController sharedInstance].tallyItems.count - 1;
     float val = ((float)index / (float)tallyCount) * 0.8;
-    return [UIColor colorWithRed:val green:1.0 blue:0.0 alpha:1.0];
+    return [UIColor colorWithRed:val green:1.0 blue:val + 0.1 alpha:0.85];
 }
 
 //-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 //    cell.backgroundColor = [self colorForIndex:indexPath.row];
 //}
+
+
 
 @end

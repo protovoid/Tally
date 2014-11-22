@@ -8,11 +8,13 @@
 
 #import "TallyListViewController.h"
 #import "TallyListViewDatasource.h"
+#import "TallyController.h"
 
 @interface TallyListViewController () <UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tallyListTableView;
 @property (nonatomic, strong) TallyListViewDataSource *dataSource;
+@property (nonatomic) float tallyTotal;
 
 @end
 
@@ -22,6 +24,17 @@
     [super viewWillAppear:animated];
     
     [self.tallyListTableView reloadData];
+    
+    // sum of Tally amounts
+    NSArray *tallys = [TallyController sharedInstance].tallyItems;
+    float tallyTotal = 0;
+    for (Tally *tally in tallys) {
+        tallyTotal += tally.amount.floatValue;
+    }
+    NSNumberFormatter *titleFormatter = [[NSNumberFormatter alloc] init];
+    [titleFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    self.title = [titleFormatter stringFromNumber:@(tallyTotal)];
+    
 }
 
 - (void)viewDidLoad {
@@ -36,7 +49,9 @@
     self.tallyListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tallyListTableView.backgroundColor = [UIColor blackColor];
     
-    self.title = @"Tally";
+    
+    // self.title = [titleFormatter stringFromNumber:tallyTotal];
+    // self.title = @"Tally";
     //self.tallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
     
     [self.view addSubview:self.tallyListTableView];
