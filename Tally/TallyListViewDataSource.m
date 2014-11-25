@@ -1,5 +1,5 @@
 //
-//  ItemViewDataSource.m
+//  TallyListViewDataSource.m
 //  Tally
 //
 //  Created by Chad on 11/6/14.
@@ -61,10 +61,28 @@
         Tally *tallyToDelete = [TallyController sharedInstance].tallyItems[indexPath.row];
         [[TallyController sharedInstance] removeItem:tallyToDelete];
         
-        // [tableView reloadData];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        // [tableView reloadData];
+        
+        
+        [self.delegate rowDeleted];
+        
+        
+        // reload title here
+        
+        // sum of Tally amounts
+//            NSArray *tallys = [TallyController sharedInstance].tallyItems;
+//            float tallyTotal = 0;
+//            for (Tally *tally in tallys) {
+//                tallyTotal += tally.amount.floatValue;
+//            }
+//            NSNumberFormatter *titleFormatter = [[NSNumberFormatter alloc] init];
+//            [titleFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+//            self.title = [titleFormatter stringFromNumber:@(tallyTotal)];
     }
 }
+
+
 
 
 -(UIColor*)colorForIndex:(NSInteger) index {

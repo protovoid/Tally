@@ -59,6 +59,10 @@
     self.saveButton.enabled = NO;
     
     
+    // hide keyboard when tapped outside
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:tapGesture];
+    
     
     
     

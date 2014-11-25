@@ -14,22 +14,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifH-Vq-K6l">
-                        <rect key="frame" x="8" y="20" width="100" height="21"/>
+                        <rect key="frame" x="8" y="20" width="165" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="BIH-Em-Ivf"/>
-                            <constraint firstAttribute="width" constant="100" id="hpV-6G-gRc"/>
+                            <constraint firstAttribute="width" constant="165" id="hpV-6G-gRc"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-f8-yQc">
-                        <rect key="frame" x="365.5" y="28" width="61.5" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-f8-yQc">
+                        <rect key="frame" x="363" y="28" width="64" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brn-S7-lkK">
-                        <rect key="frame" x="8" y="49" width="200" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brn-S7-lkK">
+                        <rect key="frame" x="8" y="49" width="165" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Xhg-1O-XPj"/>
                             <constraint firstAttribute="width" constant="49" id="Zdh-WZ-AJP"/>
@@ -49,14 +49,15 @@
                     <constraint firstItem="wgU-f8-yQc" firstAttribute="top" secondItem="AD1-ab-ANX" secondAttribute="topMargin" constant="20" id="3yu-J9-n3P"/>
                     <constraint firstItem="wgU-f8-yQc" firstAttribute="centerY" secondItem="AD1-ab-ANX" secondAttribute="centerY" id="CTV-Sy-UfB"/>
                     <constraint firstItem="wgU-f8-yQc" firstAttribute="trailing" secondItem="AD1-ab-ANX" secondAttribute="trailingMargin" id="F9U-aS-abs"/>
+                    <constraint firstItem="brn-S7-lkK" firstAttribute="top" secondItem="ifH-Vq-K6l" secondAttribute="bottom" constant="8" symbolic="YES" id="Q1P-Pf-vCw"/>
                     <constraint firstItem="brn-S7-lkK" firstAttribute="leading" secondItem="AD1-ab-ANX" secondAttribute="leadingMargin" id="a8a-Xt-ft1"/>
                     <constraint firstItem="brn-S7-lkK" firstAttribute="leading" secondItem="ifH-Vq-K6l" secondAttribute="leading" id="anp-Dd-ad8"/>
                     <constraint firstAttribute="bottomMargin" secondItem="brn-S7-lkK" secondAttribute="bottom" id="gwq-gZ-b89"/>
                     <constraint firstItem="ifH-Vq-K6l" firstAttribute="leading" secondItem="AD1-ab-ANX" secondAttribute="leadingMargin" id="iey-gc-bBN"/>
                     <constraint firstItem="brn-S7-lkK" firstAttribute="top" secondItem="ifH-Vq-K6l" secondAttribute="bottom" constant="20" id="mRs-Ge-SSp"/>
-                    <constraint firstItem="ifH-Vq-K6l" firstAttribute="leading" secondItem="brn-S7-lkK" secondAttribute="leading" id="nU9-C9-2n5"/>
                     <constraint firstItem="ifH-Vq-K6l" firstAttribute="top" secondItem="AD1-ab-ANX" secondAttribute="topMargin" constant="12" id="qtn-RM-2fh"/>
-                    <constraint firstItem="brn-S7-lkK" firstAttribute="top" secondItem="ifH-Vq-K6l" secondAttribute="bottom" constant="8" id="wxD-vJ-qfY"/>
+                    <constraint firstItem="brn-S7-lkK" firstAttribute="trailing" secondItem="ifH-Vq-K6l" secondAttribute="trailing" id="tct-qA-brt"/>
+                    <constraint firstItem="brn-S7-lkK" firstAttribute="leading" secondItem="ifH-Vq-K6l" secondAttribute="leading" id="vbf-FQ-rtO"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -74,7 +75,7 @@
                 <outlet property="memoLabel" destination="brn-S7-lkK" id="Q3V-tz-cvu"/>
                 <outlet property="nameLabel" destination="ifH-Vq-K6l" id="hNS-R3-me8"/>
             </connections>
-            <point key="canvasLocation" x="379.5" y="200.5"/>
+            <point key="canvasLocation" x="379.5" y="200"/>
         </tableViewCell>
     </objects>
 </document>

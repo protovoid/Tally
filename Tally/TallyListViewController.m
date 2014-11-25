@@ -10,7 +10,7 @@
 #import "TallyListViewDatasource.h"
 #import "TallyController.h"
 
-@interface TallyListViewController () <UITableViewDelegate>
+@interface TallyListViewController () <UITableViewDelegate, TallyListViewDataSourceDelegate>
 
 @property (nonatomic, strong) UITableView *tallyListTableView;
 @property (nonatomic, strong) TallyListViewDataSource *dataSource;
@@ -25,15 +25,17 @@
     
     [self.tallyListTableView reloadData];
     
+    [self reloadTitleAmount];
+    
     // sum of Tally amounts
-    NSArray *tallys = [TallyController sharedInstance].tallyItems;
-    float tallyTotal = 0;
-    for (Tally *tally in tallys) {
-        tallyTotal += tally.amount.floatValue;
-    }
-    NSNumberFormatter *titleFormatter = [[NSNumberFormatter alloc] init];
-    [titleFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    self.title = [titleFormatter stringFromNumber:@(tallyTotal)];
+//    NSArray *tallys = [TallyController sharedInstance].tallyItems;
+//    float tallyTotal = 0;
+//    for (Tally *tally in tallys) {
+//        tallyTotal += tally.amount.floatValue;
+//    }
+//    NSNumberFormatter *titleFormatter = [[NSNumberFormatter alloc] init];
+//    [titleFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+//    self.title = [titleFormatter stringFromNumber:@(tallyTotal)];
     
 }
 
@@ -49,6 +51,8 @@
     self.tallyListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tallyListTableView.backgroundColor = [UIColor blackColor];
     
+    self.dataSource.delegate = self;
+    
     
     // self.title = [titleFormatter stringFromNumber:tallyTotal];
     // self.title = @"Tally";
@@ -59,7 +63,24 @@
     
 }
 
+-(void)reloadTitleAmount {
+    // sum of Tally amounts
+    NSArray *tallys = [TallyController sharedInstance].tallyItems;
+    float tallyTotal = 0;
+    for (Tally *tally in tallys) {
+        tallyTotal += tally.amount.floatValue;
+    }
+    NSNumberFormatter *titleFormatter = [[NSNumberFormatter alloc] init];
+    [titleFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    self.title = [titleFormatter stringFromNumber:@(tallyTotal)];
+}
 
+
+#pragma mark - TallyListViewDataSource protocol method
+
+-(void)rowDeleted {
+    [self reloadTitleAmount];
+}
 
 
 #pragma mark - UITableViewDataDelegate protocol methods

@@ -1,5 +1,5 @@
 //
-//  ItemViewDataSource.h
+//  TallyListViewDataSource.h
 //  Tally
 //
 //  Created by Chad on 11/6/14.
@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@protocol TallyListViewDataSourceDelegate <NSObject>
+
+-(void)rowDeleted;
+
+@end
+
 @interface TallyListViewDataSource : NSObject <UITableViewDataSource>
+
+@property (nonatomic, assign) id <TallyListViewDataSourceDelegate> delegate;
 
 - (void)registerTableView:(UITableView *)tableView;
 
