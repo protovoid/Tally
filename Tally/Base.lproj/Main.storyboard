@@ -38,7 +38,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="z9W-OI-sF1">
                             <connections>
                                 <action selector="addItemButtonTapped:" destination="6H4-ds-yTe" id="myi-tJ-OE5"/>
-                                <segue destination="95R-sX-Sbp" kind="show" id="IoQ-qO-Voc"/>
+                                <segue destination="95R-sX-Sbp" kind="presentation" id="IoQ-qO-Voc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -90,16 +90,17 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djb-BE-IPg">
-                                <rect key="frame" x="16" y="258" width="34" height="30"/>
+                                <rect key="frame" x="187" y="258" width="34" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="95R-sX-Sbp" eventType="touchUpInside" id="bZc-FI-gZO"/>
+                                    <segue destination="M7K-FB-3ah" kind="unwind" unwindAction="reset:" id="Mr5-f7-s4M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMd-KV-JRx">
-                                <rect key="frame" x="184" y="258" width="37" height="30"/>
+                                <rect key="frame" x="100" y="258" width="37" height="30"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -116,6 +117,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzL-3U-mGh">
+                                <rect key="frame" x="16" y="258" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="M7K-FB-3ah" kind="unwind" unwindAction="reset:" id="UvO-KU-JGg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -137,6 +147,7 @@
                     </view>
                     <connections>
                         <outlet property="amountTextField" destination="lRY-mR-Q9F" id="4eY-mE-iWV"/>
+                        <outlet property="cancelButton" destination="nzL-3U-mGh" id="49M-pJ-nx6"/>
                         <outlet property="clearButton" destination="tMd-KV-JRx" id="JdD-RW-ZEF"/>
                         <outlet property="iadBanner" destination="fSI-nk-Vel" id="VhT-oK-4VW"/>
                         <outlet property="memoTextField" destination="OhX-ym-pCb" id="opL-bb-QQl"/>
@@ -145,6 +156,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUo-n1-pih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="M7K-FB-3ah" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1175" y="204"/>
         </scene>

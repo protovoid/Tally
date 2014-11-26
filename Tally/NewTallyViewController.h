@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *memoTextField;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancelButton;
 
 - (IBAction)saveButtonTapped:(id)sender;
 

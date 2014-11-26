@@ -60,6 +60,10 @@
     self.title = [titleFormatter stringFromNumber:@(tallyTotal)];
 }
 
+-(IBAction)reset:(UIStoryboardSegue *)segue {
+    //do stuff
+}
+
 
 #pragma mark - TallyListViewDataSource protocol method
 
