@@ -101,7 +101,7 @@
     return self;
 }
 
--(void) layoutSubviews {
+-(void)layoutSubviews {
     [super layoutSubviews];
     // ensure the gradient layers occupies the full bounds
     _gradientLayer.frame = self.bounds;

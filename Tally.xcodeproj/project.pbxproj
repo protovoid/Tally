@@ -127,13 +127,12 @@
 				6333A5DD1A09B8150067CE33 /* Main.storyboard */,
 				6333A5D71A09B8150067CE33 /* AppDelegate.h */,
 				6333A5D81A09B8150067CE33 /* AppDelegate.m */,
-				6377ACA91A144F2100A842F3 /* TallyListView */,
-				6333A5F91A09BA740067CE33 /* NewTallyViewController.h */,
-				6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */,
 				6333A6081A0AF9EA0067CE33 /* TallyController.h */,
 				6333A6091A0AF9EA0067CE33 /* TallyController.m */,
 				6333A7241A1314F20067CE33 /* Tally.h */,
 				6333A7251A1314F20067CE33 /* Tally.m */,
+				6377ACA91A144F2100A842F3 /* TallyListView */,
+				636FC3BD1A255B1E00C59C52 /* NewTallyViewController */,
 				6333A5E01A09B8150067CE33 /* Images.xcassets */,
 				6333A5E21A09B8150067CE33 /* LaunchScreen.xib */,
 				6333A5D31A09B8150067CE33 /* Supporting Files */,
@@ -165,6 +164,15 @@
 				6333A5EE1A09B8150067CE33 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		636FC3BD1A255B1E00C59C52 /* NewTallyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6333A5F91A09BA740067CE33 /* NewTallyViewController.h */,
+				6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */,
+			);
+			name = NewTallyViewController;
 			sourceTree = "<group>";
 		};
 		6377ACA91A144F2100A842F3 /* TallyListView */ = {

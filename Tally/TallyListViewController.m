@@ -1,5 +1,5 @@
 //
-//  ItemListViewController.m
+//  TallyListViewController.m
 //  Tally
 //
 //  Created by Chad on 11/4/14.
@@ -27,15 +27,6 @@
     
     [self reloadTitleAmount];
     
-    // sum of Tally amounts
-//    NSArray *tallys = [TallyController sharedInstance].tallyItems;
-//    float tallyTotal = 0;
-//    for (Tally *tally in tallys) {
-//        tallyTotal += tally.amount.floatValue;
-//    }
-//    NSNumberFormatter *titleFormatter = [[NSNumberFormatter alloc] init];
-//    [titleFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-//    self.title = [titleFormatter stringFromNumber:@(tallyTotal)];
     
 }
 
@@ -45,22 +36,16 @@
     self.tallyListTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.dataSource = [TallyListViewDataSource new];
     [self.dataSource registerTableView:self.tallyListTableView];
+    self.dataSource.delegate = self;
     self.tallyListTableView.dataSource = self.dataSource;
     self.tallyListTableView.delegate = self;
     self.tallyListTableView.allowsMultipleSelection = NO;
     self.tallyListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tallyListTableView.backgroundColor = [UIColor blackColor];
     
-    self.dataSource.delegate = self;
-    
-    
     // self.title = [titleFormatter stringFromNumber:tallyTotal];
-    // self.title = @"Tally";
-    //self.tallyListTableView.backgroundColor = [UIColor colorWithRed:69/255.0 green:191/255.0 blue:85/255.0 alpha:1.0];
     
     [self.view addSubview:self.tallyListTableView];
-
-    
 }
 
 -(void)reloadTitleAmount {
