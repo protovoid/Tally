@@ -26,6 +26,7 @@
 		636FC3BC1A20798C00C59C52 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636FC3BB1A20798C00C59C52 /* QuartzCore.framework */; };
 		6377ACA81A14498200A842F3 /* TallyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377ACA71A14498200A842F3 /* TallyTableViewCell.m */; };
 		6377ACF71A17D8CC00A842F3 /* TallyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377ACF61A17D8CC00A842F3 /* TallyTableViewCell.xib */; };
+		63F76EA51A2EA33300BF4AD0 /* NewTallyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F76EA41A2EA33300BF4AD0 /* NewTallyTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		6377ACA61A14498200A842F3 /* TallyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyTableViewCell.h; sourceTree = "<group>"; };
 		6377ACA71A14498200A842F3 /* TallyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyTableViewCell.m; sourceTree = "<group>"; };
 		6377ACF61A17D8CC00A842F3 /* TallyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TallyTableViewCell.xib; sourceTree = "<group>"; };
+		63F76EA31A2EA33300BF4AD0 /* NewTallyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTallyTableViewController.h; sourceTree = "<group>"; };
+		63F76EA41A2EA33300BF4AD0 /* NewTallyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTallyTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 			children = (
 				6333A5F91A09BA740067CE33 /* NewTallyViewController.h */,
 				6333A5FA1A09BA740067CE33 /* NewTallyViewController.m */,
+				63F76EA31A2EA33300BF4AD0 /* NewTallyTableViewController.h */,
+				63F76EA41A2EA33300BF4AD0 /* NewTallyTableViewController.m */,
 			);
 			name = NewTallyViewController;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F76EA51A2EA33300BF4AD0 /* NewTallyTableViewController.m in Sources */,
 				6377ACA81A14498200A842F3 /* TallyTableViewCell.m in Sources */,
 				6333A7261A1314F20067CE33 /* Tally.m in Sources */,
 				6333A71E1A1312930067CE33 /* Stack.m in Sources */,
